@@ -8,18 +8,44 @@
 </head>
 <body>
     <script>
-        function getComputerChoice(num = 30) {
+            function getComputerChoice(num = 30) {
     let picker = Math.floor(Math.random() * num);
-    
+
         if (picker >= 0 && picker < 10) {
-            picker = console.log('Rock');
+            return 'ROCK';
         } else if (picker >= 10 && picker < 20) {
-            picker = console.log('Paper');
+            return 'PAPER';
         } else {
-            picker = console.log('Scissors');
+            return 'SCISSORS';
         }
-            return picker;
     }
+
+        function playRound(playerSelection, computerSelection) {
+           playerSelection = playerSelection.toUpperCase()
+                let results = ''
+            if (playerSelection === 'ROCK' && computerSelection === 'PAPER') {
+                return  results = 'YOU LOSE! PAPER BEATS ROCK';
+            } else if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
+                return  results = 'YOU WIN!! ROCK BEATS PAPER';
+            } else if (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
+                return results = 'YOU LOSE! SCISSORS BEAT PAPER';
+            } else if (playerSelection === 'PAPER' && computerSelection === 'ROCK') {
+                return results = 'YOU WIN!! PAPER BEATS ROCK';
+            } else if (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
+                return   results = 'YOU LOSE! ROCK BEATS SCISSORS';
+            } else if (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
+                return  results = 'YOU WIN!! SCISSORS BEAT PAPER';
+            } else if (playerSelection === computerSelection) {
+                return  results = 'TIE SCORE!!! TRY AGAIN';
+            } else {
+                 console.log('hmm?');
+            }
+        } 
+
+        let playerSelection = "rock";
+        let computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+
     </script>
 </body>
 </html>
