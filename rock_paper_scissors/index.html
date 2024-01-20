@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="script.js">
 </head>
 <body>
     <script>
-        
+        function getComputerChoice(num = 30) {
+    let picker = Math.floor(Math.random() * num);
+    
+        if (picker >= 0 && picker < 10) {
+            picker = console.log('Rock');
+        } else if (picker >= 10 && picker < 20) {
+            picker = console.log('Paper');
+        } else {
+            picker = console.log('Scissors');
+        }
+            return picker;
+    }
     </script>
 </body>
 </html>
